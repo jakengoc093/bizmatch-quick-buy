@@ -1,7 +1,7 @@
 <?php
 /*
 * Plugin Name: BizMatch Quick Buy - Mua Hàng Nhanh
-* Version: 1.0.5
+* Version: 1.0.6
 * Description: BizMatch Quick Buy là plugin giúp khách hàng có thể mua nhanh sản phẩm ngay tại trang chi tiết dưới dạng popup
 * Author: Ngọc Nguyễn
 * Author URI: https://ngocnguyen.com.vn
