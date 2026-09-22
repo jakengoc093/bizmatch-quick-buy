@@ -1,7 +1,7 @@
 <?php
 /*
 * Plugin Name: BizMatch Quick Buy - Mua Hàng Nhanh
-* Version: 1.0.4
+* Version: 1.0.5
 * Description: BizMatch Quick Buy là plugin giúp khách hàng có thể mua nhanh sản phẩm ngay tại trang chi tiết dưới dạng popup
 * Author: Ngọc Nguyễn
 * Author URI: https://ngocnguyen.com.vn
@@ -11,21 +11,18 @@
 * WC requires at least: 3.5.4
 * WC tested up to: 8.0
 */
-// 1. Nhúng thư viện auto-update từ GitHub
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+
+// Nhúng thư viện Plugin Update Checker (tự động cập nhật từ GitHub)
 require_once plugin_dir_path(__FILE__) . 'plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
-// 2. Khởi tạo đối tượng kiểm tra phiên bản
-$myUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
+$bizmatch_update_checker = PucFactory::buildUpdateChecker(
     'https://github.com/jakengoc093/bizmatch-quick-buy/',
     __FILE__,
     'bizmatch-quick-buy'
 );
-
-// 3. Khai báo Branch chính
 $bizmatch_update_checker->setBranch('main');
-
-defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 // Khai báo tương thích với WooCommerce High-Performance Order Storage (HPOS).
 add_action( 'before_woocommerce_init', function () {
@@ -39,7 +36,7 @@ if ( is_multisite() || in_array( 'woocommerce/woocommerce.php', apply_filters( '
         class BizMatch_Quick_Buy
         {
             protected static $instance;
-            public $_version = '1.0.4';
+            public $_version = '1.0.5';
             public $_optionName = 'quickbuy_options';
             public $_optionGroup = 'quickbuy-options-group';
             public $_defaultOptions = array(
