@@ -1,0 +1,7 @@
+.wrap.bizmatch_quickbuy input[type="text"] {
+    width: 100%;
+    max-width: 500px;
+}
+.wrap.bizmatch_quickbuy label ~ label {
+    margin-left: 20px;
+}
